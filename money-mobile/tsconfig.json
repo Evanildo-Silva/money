@@ -2,12 +2,5 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true
-  },
-  "include": [
-    "src/assets",
-    "src/components",
-    "src/screens",
-    "src/constants",
-    "src/typings.d.ts"
-  ]
+  }
 }

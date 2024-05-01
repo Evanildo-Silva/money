@@ -1,4 +1,4 @@
-declare module "*.svg" {
-  const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
+declare module "*.png" {
+  const content: ImageSourcePropType;
   export default content;
 }
