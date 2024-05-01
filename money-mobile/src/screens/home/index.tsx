@@ -1,5 +1,4 @@
-import { Image, View } from "react-native";
-import { PrimaryCard } from "../../components/primaryCard";
+import { Image, ScrollView, View } from "react-native";
 import icons from "../../constants/icons";
 import { styles } from "./style";
 
@@ -7,7 +6,7 @@ function Home() {
   return (
     <View style={styles.container}>
       <Image style={styles.logo} source={icons.logo} />
-      <PrimaryCard />
+      <ScrollView></ScrollView>
     </View>
   );
 }
