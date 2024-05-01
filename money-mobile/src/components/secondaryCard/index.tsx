@@ -5,7 +5,7 @@ type SecondaryCardProps = {
   icon: ImageSourcePropType;
   title: string;
   description: string;
-  value: string;
+  value: number;
 };
 
 function SecondaryCard({
@@ -16,12 +16,18 @@ function SecondaryCard({
 }: SecondaryCardProps) {
   return (
     <View style={styles.container}>
-      <View>
-        <Image source={icon} />
+      <View style={styles.containerIcon}>
+        <Image style={styles.icon} source={icon} />
       </View>
-      <Text>{title}</Text>
-      <Text>{description}</Text>
-      <Text>{value}</Text>
+      <View style={styles.containerDescription}>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.description}>{description}</Text>
+      </View>
+      <View style={styles.containerValue}>
+        <Text style={styles.value}>
+          {value.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
+        </Text>
+      </View>
     </View>
   );
 }
