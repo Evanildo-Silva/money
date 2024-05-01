@@ -1,27 +1,33 @@
 import { Image, ImageSourcePropType, Text, View } from "react-native";
 import { styles } from "./style";
 
-type SecondaryCardProps = {
-  icon: ImageSourcePropType;
-  title: string;
+export type SecondaryCardProps = {
+  icon: ImageSourcePropType | string;
+  category: string;
   description: string;
-  value: string;
+  value: number;
 };
 
 function SecondaryCard({
   icon,
-  title,
+  category,
   description,
   value,
 }: SecondaryCardProps) {
   return (
     <View style={styles.container}>
-      <View>
-        <Image source={icon} />
+      <View style={styles.containerIcon}>
+        <Image style={styles.icon} source={{ uri: icon.toString() }} />
       </View>
-      <Text>{title}</Text>
-      <Text>{description}</Text>
-      <Text>{value}</Text>
+      <View style={styles.containerDescription}>
+        <Text style={styles.category}>{category}</Text>
+        <Text style={styles.description}>{description}</Text>
+      </View>
+      <View style={styles.containerValue}>
+        <Text style={styles.value}>
+          {value.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
+        </Text>
+      </View>
     </View>
   );
 }
