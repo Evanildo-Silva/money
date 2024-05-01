@@ -7,81 +7,11 @@ import {
   SecondaryCard,
   SecondaryCardProps,
 } from "../../components/secondaryCard";
+import { useGetExpenses } from "../../hooks/useGetExpenses";
 import { styles } from "./style";
 
 function Home() {
-  const data = [
-    {
-      id: 1,
-      icon: "https://jornadajs-devpoint.s3.amazonaws.com/icon-carro.png",
-      category: "Carro",
-      description: "Pagamento IPVA",
-      value: 2500,
-    },
-    {
-      id: 2,
-      icon: "https://jornadajs-devpoint.s3.amazonaws.com/icon-casa.png",
-      category: "Casa",
-      description: "Condomínio",
-      value: 620,
-    },
-    {
-      id: 3,
-      icon: "https://jornadajs-devpoint.s3.amazonaws.com/icon-lazer.png",
-      category: "Lazer",
-      description: "Sorvete no parque",
-      value: 17.5,
-    },
-    {
-      id: 4,
-      icon: "https://jornadajs-devpoint.s3.amazonaws.com/icon-mercado.png",
-      category: "Mercado",
-      description: "Pagamento IPVA",
-      value: 375,
-    },
-    {
-      id: 5,
-      icon: "https://jornadajs-devpoint.s3.amazonaws.com/icon-treinamento.png",
-      category: "Educação",
-      description: "Pagamento IPVA",
-      value: 490,
-    },
-    {
-      id: 6,
-      icon: "https://jornadajs-devpoint.s3.amazonaws.com/icon-viagem.png",
-      category: "Viagem",
-      description: "Pagamento IPVA",
-      value: 610,
-    },
-    {
-      id: 7,
-      icon: "https://jornadajs-devpoint.s3.amazonaws.com/icon-mercado.png",
-      category: "Mercado",
-      description: "Pagamento IPVA",
-      value: 144,
-    },
-    {
-      id: 8,
-      icon: "https://jornadajs-devpoint.s3.amazonaws.com/icon-viagem.png",
-      category: "Viagem",
-      description: "Pagamento IPVA",
-      value: 330,
-    },
-    {
-      id: 9,
-      icon: "https://jornadajs-devpoint.s3.amazonaws.com/icon-viagem.png",
-      category: "Viagem",
-      description: "Pagamento IPVA",
-      value: 330,
-    },
-    {
-      id: 10,
-      icon: "https://jornadajs-devpoint.s3.amazonaws.com/icon-viagem.png",
-      category: "Viagem",
-      description: "Pagamento IPVA",
-      value: 330,
-    },
-  ];
+  const { expenses } = useGetExpenses();
 
   const renderItem = useCallback(
     ({ item }: ListRenderItemInfo<SecondaryCardProps>) => {
@@ -96,7 +26,7 @@ function Home() {
       <FlatList
         ListHeaderComponent={HeaderList}
         keyExtractor={(item) => item.id.toString()}
-        data={data}
+        data={expenses}
         renderItem={renderItem}
       />
       <AddButton onPress={() => console.log("===========")} />
