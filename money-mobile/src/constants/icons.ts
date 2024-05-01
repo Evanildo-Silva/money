@@ -1,3 +1,4 @@
+import add from "../assets/icon-add.png";
 import airplane from "../assets/icon-airplane.png";
 import bike from "../assets/icon-bike.png";
 import book from "../assets/icon-book.png";
@@ -9,6 +10,7 @@ import marketplaceCart from "../assets/icon-marketplace-cart.png";
 import trash from "../assets/icon-trash.png";
 
 export default {
+  add,
   airplane,
   bike,
   book,
