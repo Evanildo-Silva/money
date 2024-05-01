@@ -1,6 +1,7 @@
 import { FlatList, View } from "react-native";
 import { AddButton } from "../../components/addButton";
 import { Header } from "../../components/header";
+import { HeaderList } from "../../components/headerList";
 import { SecondaryCard } from "../../components/secondaryCard";
 import { styles } from "./style";
 
@@ -80,8 +81,9 @@ function Home() {
 
   return (
     <View style={styles.container}>
+      <Header />
       <FlatList
-        ListHeaderComponent={Header}
+        ListHeaderComponent={HeaderList}
         keyExtractor={(item) => item.id.toString()}
         data={data}
         renderItem={({ item }) => <SecondaryCard {...item} />}
