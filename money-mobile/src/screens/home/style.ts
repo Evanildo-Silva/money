@@ -7,10 +7,6 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     paddingHorizontal: 28,
   },
-  logo: {
-    width: 100,
-    height: 30,
-  },
 });
 
 export { styles };
