@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   containerDescription: {
     flex: 10,
   },
-  title: {
+  category: {
     fontSize: FONT_SIZE.sm,
     fontWeight: "bold",
     color: COLORS.dark_gray,

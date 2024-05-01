@@ -1,16 +1,16 @@
 import { Image, ImageSourcePropType, Text, View } from "react-native";
 import { styles } from "./style";
 
-type SecondaryCardProps = {
+export type SecondaryCardProps = {
   icon: ImageSourcePropType | string;
-  title: string;
+  category: string;
   description: string;
   value: number;
 };
 
 function SecondaryCard({
   icon,
-  title,
+  category,
   description,
   value,
 }: SecondaryCardProps) {
@@ -20,7 +20,7 @@ function SecondaryCard({
         <Image style={styles.icon} source={{ uri: icon.toString() }} />
       </View>
       <View style={styles.containerDescription}>
-        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.category}>{category}</Text>
         <Text style={styles.description}>{description}</Text>
       </View>
       <View style={styles.containerValue}>
