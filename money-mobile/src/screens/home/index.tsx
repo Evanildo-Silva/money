@@ -1,3 +1,5 @@
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useCallback } from "react";
 import { FlatList, ListRenderItemInfo, View } from "react-native";
 import { AddButton } from "../../components/addButton";
@@ -8,10 +10,14 @@ import {
   SecondaryCardProps,
 } from "../../components/secondaryCard";
 import { useGetExpenses } from "../../hooks/useGetExpenses";
+import { StackParamsList } from "../../routes/app.routes";
 import { styles } from "./style";
 
 function Home() {
   const { expenses } = useGetExpenses();
+
+  const { navigate } =
+    useNavigation<NativeStackNavigationProp<StackParamsList>>();
 
   const renderItem = useCallback(
     ({ item }: ListRenderItemInfo<SecondaryCardProps>) => {
@@ -29,7 +35,7 @@ function Home() {
         data={expenses}
         renderItem={renderItem}
       />
-      <AddButton onPress={() => console.log("===========")} />
+      <AddButton onPress={() => navigate("cadastrar")} />
     </View>
   );
 }
